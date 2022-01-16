@@ -59,7 +59,9 @@ const ShowDetail = () => {
                                 <div className='info' key={index}>
                                     {capitalizeFirstLetter(key)} : {getText(value)}
                                 </div>
-                            )}
+                            )}else {
+                                return <React.Fragment key={index}/>
+                            }
                         })
                     }
                     {!loading && <div className='info' > Country : {show.network?.country?.name} </div>}
