@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    height: 62px;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.header.fixed {
+    position: fixed;
+  top: 0;
+  width: 100%;
+}

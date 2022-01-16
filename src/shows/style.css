@@ -1,0 +1,253 @@
+.searchbox {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.searchbox .searchBoxInput,.goBackButton{
+    width: 20%;
+    outline: none;
+    padding: 0.5em 0.5em;
+    font-size: 1.2em;
+    border-radius: 0.3em;
+
+}
+
+.goBackButton {
+    margin:20px ;
+    width:150px;
+    background-color: green;
+    color: white;
+    margin-left: 117px;
+     margin-top:90px ;
+}
+
+.goBackButton::before {
+    content: "←";
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.goBackButton:disabled {
+    cursor: not-allowed;
+      background-color: 	#32CD32;
+}
+
+.searchbox .searchBoxInput:focus {
+    border: 2px solid hsl(0,0%,40%);
+    box-shadow: 0 0 8px 1px hsl(0,0%,20%);
+}
+
+.searchbox .searchBoxInput.error{
+    border: 2px solid red;
+    box-shadow: 0 0 8px 1px #ed1c24;
+}
+
+.searchbox .searchClearButton {
+    cursor:pointer;
+    padding: 0.5em 1.5em;
+    margin-left:0.4em;
+    font-size: 1.2rem;
+    background-color: hsl(0,0%,90%);
+    border: 1px solid hsl(0,0%,70%);
+    outline: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.searchbox .searchClearButton:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+}
+
+.searchbox .searchClearButton:hover {
+    background-color: hsl(0,0%,80%);
+    box-shadow: 0px 0px 5px 0 hsl(0,0%,60%);
+}
+
+.errorText{    
+    margin-top: 15px;
+    font-size: 20px;
+    color: red;
+    word-break: break-word;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 35px 10px;
+}
+
+.cardContainer .dataLoading {
+    font-size: 35px;
+}
+
+.noData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.noData img {
+    width: 30%;
+    height: 30%;
+}
+
+.noData .noDataTitle {
+    font-size: 35px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.card {
+  background: white;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  border-radius: .25rem;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.cardHeader {
+  font-size: 1.5rem;
+   padding: 0;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: .5rem;
+}
+
+.cardHeader > img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  -webkit-transition: all .5s ease-in-out;
+}
+
+.card:hover >.cardHeader > img,.gridContainer .gridItem_1>img:hover  {
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.1);
+}
+
+.cardBody {
+  padding: 0 1rem;
+}
+
+.cardBody .cardTitle {
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 10px;
+    text-align: center;
+}
+
+@media (max-width:1000px) and (min-width:850px) {
+    .cardContainer {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+    .searchbox .searchBoxInput {
+        width:30%
+    }
+    .searchbox .searchClearButton {
+        padding: 0.5em 1em;
+    }
+    .noData .noDataTitle {
+        font-size: 30px;
+    }
+    .noData img {
+        width: 40%;
+        height: 40%;
+    }
+
+}
+
+@media (max-width:850px) and (min-width:550px) {
+    .cardContainer {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+    .searchbox .searchBoxInput {
+        width:40%
+    }
+    .searchbox .searchClearButton {
+        padding: 0.5em 0.7em;
+    }
+    .noData .noDataTitle {
+        font-size: 25px;
+    }
+     .noData img {
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media (max-width:550px) {
+    .cardContainer {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+     .searchbox .searchBoxInput {
+        width:50%
+    }
+    .searchbox .searchClearButton {
+        padding: 0.5em 0.5em;
+    }
+    .noData .noDataTitle {
+        font-size: 20px;
+    }
+     .noData img {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+
+
+/* show Details Page css */
+.gridContainer {
+    display: grid;
+    grid-template-columns:  repeat(2,minmax(200px,1fr));
+    height: 80vh;
+    margin-top: 45px;
+}
+
+.gridContainer .gridItem_1 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridContainer .gridItem_1>img {
+    max-height: 700px;
+    object-fit: contain;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.gridContainer .gridItem_2{
+   border: 1px solid black;
+    margin-right: 5%;
+    border-radius: 15px;
+    padding: 1.5em;
+    margin-bottom: 30px;
+}
+
+.gridContainer .gridItem_2 .movieTitle{
+    font-size: 2em;
+}
+
+.gridContainer .gridItem_2 .info{
+    font-size: 1.5em;
+    margin: 30px 0px;
+}
+
+@media (max-width:1000px) and (min-width:200px) {
+    .gridContainer {
+        grid-template-columns:  repeat(1,minmax(200px,1fr));
+    }
+    .gridContainer .gridItem_1>img  {
+         max-height: 500px;
+    }
+    .gridContainer .gridItem_2 {
+        margin-top: 35px;
+        margin-left:20px;
+    }
+}
